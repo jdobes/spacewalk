@@ -471,14 +471,14 @@ def main():
             writeError(e)
             return 91
 
-    prepRhsmManifest(options)
-
     try:
         cdn_activate.activate()
     except ManifestValidationError:
         e = sys.exc_info()[1]
         writeError(e)
         return 14
+
+    prepRhsmManifest(options)
 
     return 0
 
